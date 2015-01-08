@@ -1,0 +1,26 @@
+SubDir HAIKU_TOP src apps minesweeper ;
+
+Application Minesweeper :
+	AboutWindow.cpp
+	AnimatedSprite.cpp
+	Assets.cpp
+	Audio.cpp
+	CustomFieldWindow.cpp
+	DigitalTimerView.cpp
+	HighscoreWindow.cpp
+	ImageButton.cpp
+	MinefieldView.cpp
+	Minesweeper.cpp
+	MinesweeperIconView.cpp
+	MinesweeperWindow.cpp
+	Settings.cpp
+	SubmitWindow.cpp
+	main.cpp
+	: be translation game $(TARGET_LIBSTDC++)
+	: Minesweeper.rdef
+;
+
+DoCatalogs Minesweeper :
+	x-vnd.Haiku-Minesweeper
+	: 
+;
