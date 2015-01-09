@@ -176,10 +176,8 @@ MinesweeperWindow::MessageReceived(BMessage* msg)
 			break;
 		}
 		case MSG_FACE: {
-			if (fMinefield->GameOver || fMinefield->Victory) {
-				fMinefield->Clear();
-				fTimeStart = system_time();
-			}
+			fMinefield->Clear();
+			fTimeStart = system_time();
 
 			break;
 		}
