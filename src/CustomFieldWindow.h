@@ -20,42 +20,43 @@
 
 class MinesweeperWindow;
 
-class CustomFieldWindow : public BWindow
-{
+class CustomFieldWindow : public BWindow {
 public:
+						CustomFieldWindow(MinesweeperWindow* parent,
+							uint32 width, uint32 height, uint32 mines);
+						~CustomFieldWindow();
+
+	void				MessageReceived(BMessage* msg);
+
 	uint32				Width;
 	uint32				Height;
 	uint32				Mines;
 	bool				Result;
-	
-						CustomFieldWindow(MinesweeperWindow* parent, uint32 width, uint32 height, uint32 mines);
-						~CustomFieldWindow();
-	
-	void				MessageReceived(BMessage* msg);
-	
+
+
 private:
 	MinesweeperWindow*	fParent;
 
 	BStringView*		fInfo;
-	
+
 	BTextControl*		fWidthControl;
 	BStringView*		fWidthError;
-	
+
 	BTextControl*		fHeightControl;
 	BStringView*		fHeightError;
-	
+
 	BTextControl*		fMinesControl;
 	BStringView*		fMinesError;
-	
+
 	BStringView*		fProtipLabel;
 	BStringView*		fProtipContent;
 	BStringView*		fProtipContent2;
-	
+
 	BButton*			fAcceptButton;
 	BButton*			fCancelButton;
-	
-	bool 				fWantAccept;
-	
+
+	bool				fWantAccept;
+
 	bool				_Validate();
 };
 

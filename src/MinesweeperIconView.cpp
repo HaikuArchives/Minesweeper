@@ -17,12 +17,12 @@ MinesweeperIconView::MinesweeperIconView()
 
 MinesweeperIconView::~MinesweeperIconView()
 {
-	
+
 }
 
 
 void
 MinesweeperIconView::Draw(BRect updateRect)
 {
-	DrawBitmap(Assets.gfx.icon, BPoint(0, 0));	
+	DrawBitmap(Assets.gfx.icon, BPoint(0, 0));
 }

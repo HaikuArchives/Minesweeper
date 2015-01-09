@@ -22,34 +22,33 @@
 
 #define HIGHSCORE_COUNT			10
 
-class Settings
-{
+class Settings {
 public:
-	uint8 					Size;
-	uint8 					Width;
-	uint8 					Height;
-	uint16 					Mines;
-	uint8					Options;
-	
-	BString					NameArrayBeginner[HIGHSCORE_COUNT];
-	uint32					TimeArrayBeginner[HIGHSCORE_COUNT];
-	
-	BString					NameArrayIntermediate[HIGHSCORE_COUNT];
-	uint32					TimeArrayIntermediate[HIGHSCORE_COUNT];
-	
-	BString					NameArrayExpert[HIGHSCORE_COUNT];
-	uint32					TimeArrayExpert[HIGHSCORE_COUNT];
-	
+							Settings();
+							~Settings();
+
 	void					Defaults();
 	void					Load();
 	void					Save();
-	
-							Settings();
-							~Settings();
-	
+
 	bool					IsHighscore(uint32 time);
 	void					AddHighscore(BString name, uint32 time);
-	
+
+	uint8					Size;
+	uint8					Width;
+	uint8					Height;
+	uint16					Mines;
+	uint8					Options;
+
+	BString					NameArrayBeginner[HIGHSCORE_COUNT];
+	uint32					TimeArrayBeginner[HIGHSCORE_COUNT];
+
+	BString					NameArrayIntermediate[HIGHSCORE_COUNT];
+	uint32					TimeArrayIntermediate[HIGHSCORE_COUNT];
+
+	BString					NameArrayExpert[HIGHSCORE_COUNT];
+	uint32					TimeArrayExpert[HIGHSCORE_COUNT];
+
 private:
 	BPath					fPath;
 	BFile*					fFile;

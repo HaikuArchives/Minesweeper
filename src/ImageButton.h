@@ -8,18 +8,17 @@
 
 #include <Button.h>
 
-class ImageButton : public BButton
-{
+class ImageButton : public BButton {
 public:
-						ImageButton(BRect frame, const char* name, 
+						ImageButton(BRect frame, const char* name,
 							BBitmap* image, BMessage* message,
 							uint32 resizingMode);
 						~ImageButton();
-						
+
 	void				Draw(BRect updateRect);
-	
+
 	void				SetBitmap(BBitmap* image);
-	
+
 private:
 	BBitmap*			fImage;
 };

@@ -5,20 +5,20 @@
 
 #include "ImageButton.h"
 
-ImageButton::ImageButton(BRect frame, const char* name, BBitmap* image, 
+ImageButton::ImageButton(BRect frame, const char* name, BBitmap* image,
 	BMessage* message, uint32 resizingMode)
 	:
 	BButton(frame, name, "", message, resizingMode)
 {
 	fImage = image;
-	
+
 	SetDrawingMode(B_OP_ALPHA);
 }
 
 
 ImageButton::~ImageButton()
 {
-	
+
 }
 
 

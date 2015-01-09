@@ -11,19 +11,20 @@
 class AnimatedSprite
 {
 public:
-	BPoint 						Point;
-	
-								AnimatedSprite(BPoint point, BBitmap** frames, uint32 n, bigtime_t time);
+	BPoint						Point;
+
+								AnimatedSprite(BPoint point, BBitmap** frames,
+									uint32 n, bigtime_t time);
 								~AnimatedSprite();
-	BBitmap* 					GetFrame(bigtime_t dt);
-	
+	BBitmap*					GetFrame(bigtime_t dt);
+
 private:
-	BBitmap** 					fFrames;
-	uint32 						fN;
+	BBitmap**					fFrames;
+	uint32						fN;
 	uint32						fAt;
-	bigtime_t 					fTime;
-	bigtime_t 					fTimeTotal;
-	bigtime_t 					fTimeWait;
+	bigtime_t					fTime;
+	bigtime_t					fTimeTotal;
+	bigtime_t					fTimeWait;
 };
 
 #endif

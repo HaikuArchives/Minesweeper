@@ -15,27 +15,26 @@
 #include <GroupLayoutBuilder.h>
 #include <Button.h>
 
-class HighscoreWindow : public BWindow
-{
+class HighscoreWindow : public BWindow {
 public:
 							HighscoreWindow(const Settings* settings);
 							~HighscoreWindow();
 private:
+	BString					_TimeString(uint32 time);
+
 	BStringView*			fBeginnerText;
 	BStringView*			fNameArrayBeginner[10];
 	BStringView*			fTimeArrayBeginner[10];
-	
+
 	BStringView*			fIntermediateText;
 	BStringView*			fNameArrayIntermediate[10];
 	BStringView*			fTimeArrayIntermediate[10];
-	
+
 	BStringView*			fExpertText;
 	BStringView*			fNameArrayExpert[10];
 	BStringView*			fTimeArrayExpert[10];
-	
+
 	BButton*				fCloseButton;
-	
-	BString					_TimeString(uint32 time);
 };
 
 #endif
