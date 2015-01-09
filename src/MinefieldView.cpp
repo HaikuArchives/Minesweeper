@@ -147,11 +147,11 @@ MinefieldView::Draw(BRect updateRect)
 	}
 
 	if (!GameOver) {
-		if (!Victory) {
-			if (fMouseButtons)
-				DrawBitmap(Assets.gfx.press, BPoint(fMouseX * 24, fMouseY * 24));
-			else
-				DrawBitmap(Assets.gfx.hover, BPoint(fMouseX * 24, fMouseY * 24));
+		if (!Victory
+			&& BRect(0, 0, fWidth - 1, fHeight - 1)
+				.Contains(BPoint(fMouseX, fMouseY))) {
+			BBitmap* bmp = fMouseButtons ? Assets.gfx.press : Assets.gfx.hover;
+			DrawBitmap(bmp, BPoint(fMouseX * 24, fMouseY * 24));
 		}
 	} else {
 		bool shouldInvalidate = fExplosionList.size() > 0;
