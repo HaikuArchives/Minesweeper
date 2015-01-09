@@ -79,7 +79,9 @@ _Assets::_LoadImage(const char* name)
 // Temporary, only while bottom trick is needed.
 // --------------------
 #include <string>
-#include <cstdlib>
+#include <string.h>
+#include <iostream>
+#include <stdlib.h>
 #include <errno.h>
 using namespace std;
 // --------------------
