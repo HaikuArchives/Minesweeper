@@ -13,24 +13,21 @@
 #include <TranslatorFormats.h>
 #include <Resources.h>
 
-class _Assets
-{
+class _Assets {
 public:
-	struct
-	{
+	struct {
 		BBitmap* boom[5];
 		BBitmap* digits	[10];
-		
-		struct
-		{
+
+		struct {
 			BBitmap* defeat;
 			BBitmap* happy;
 			BBitmap* oh;
-			BBitmap* victory;	
+			BBitmap* victory;
 		} face;
-		
+
 		BBitmap* signs	[9];
-		
+
 		BBitmap* button;
 		BBitmap* flag;
 		BBitmap* flagmine;
@@ -42,22 +39,21 @@ public:
 		BBitmap* red;
 		BBitmap* redmine;
 	} gfx;
-	
-	struct
-	{
+
+	struct {
 		BSimpleGameSound* boom;
 		BSimpleGameSound* click;
 		BSimpleGameSound* start;
 		BSimpleGameSound* victory;
 	} sfx;
-	
-	void LoadAll();
-	
-private:
-	BResources* fResources;
 
-	BBitmap* _LoadImage(const char* name);
-	BSimpleGameSound* _LoadSound(const char* name);
+	void LoadAll();
+
+private:
+	BBitmap*			_LoadImage(const char* name);
+	BSimpleGameSound*	_LoadSound(const char* name);
+
+	BResources*			fResources;
 };
 
 extern _Assets Assets;

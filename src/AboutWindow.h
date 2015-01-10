@@ -2,7 +2,7 @@
  * Copyright 2013 Tri-Edge AI <triedgeai@gmail.com>
  * All rights reserved. Distributed under the terms of the MIT license.
  */
- 
+
 #ifndef _ABOUT_WINDOW_H_
 #define _ABOUT_WINDOW_H_
 
@@ -26,4 +26,4 @@ private:
 	BButton*				fOKButton;
 };
 
-#endif 
+#endif

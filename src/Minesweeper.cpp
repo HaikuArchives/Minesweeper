@@ -16,5 +16,5 @@ Minesweeper::Minesweeper()
 
 Minesweeper::~Minesweeper()
 {
-	
+
 }

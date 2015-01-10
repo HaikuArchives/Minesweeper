@@ -10,10 +10,10 @@ int
 main()
 {
 	srand(time(NULL));
-	
+
 	Minesweeper* app = new Minesweeper();
-	
+
 	app->Run();
-	
+
 	return 0;
 }

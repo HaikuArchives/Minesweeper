@@ -11,21 +11,19 @@
 #include <View.h>
 #include <Box.h>
 
-class DigitalTimerView : public BBox
-{
+class DigitalTimerView : public BBox {
 public:
-							DigitalTimerView(BRect frame, const char* name, 
+							DigitalTimerView(BRect frame, const char* name,
 								uint32 resizingMode);
 							~DigitalTimerView();
-							
+
 	void					Draw(BRect updateRect);
 	void					Set(uint32 value);
-								
+
 private:
 	uint32					fDigit1;
 	uint32					fDigit2;
 	uint32					fDigit3;
-	
 };
 
 #endif

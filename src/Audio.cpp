@@ -13,38 +13,38 @@ _Audio::_Audio()
 		fPool[i].origin = NULL;
 		fPool[i].sound = NULL;
 	}
-	
+
 	fEnabled = true;
 }
 
 
 _Audio::~_Audio()
 {
-	
+
 }
 
 
 void
 _Audio::SetEnabled(bool b)
 {
-	fEnabled = b;	
+	fEnabled = b;
 }
 
 
 void
 _Audio::PlaySound(BGameSound* sound)
-{	
+{
 	if (!fEnabled)
 		return;
-		
+
 	// TODO: Resolve why Clone() returns unplayable sounds.
-	
+
 	//sound = _CloneSound((BSimpleGameSound*)sound);
 	sound->StartPlaying();
-	
+
 	//sound->StartPlaying();
 		// This works.
-		
+
 	//sound->Clone()->StartPlaying();
 		// This does not.
 

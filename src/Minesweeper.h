@@ -17,7 +17,7 @@ public:
 							~Minesweeper();
 
 private:
-	MinesweeperWindow* 		fWindow;
+	MinesweeperWindow*		fWindow;
 };
 
 #endif
