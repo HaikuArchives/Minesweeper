@@ -7,7 +7,7 @@
 
 AboutWindow::AboutWindow()
 	:
-	BWindow(BRect(200, 200, 600, 280), "About", B_FLOATING_WINDOW,
+	BWindow(BRect(200, 200, 600, 300), "About", B_FLOATING_WINDOW,
 		B_NOT_RESIZABLE)
 {
 	fIcon = new MinesweeperIconView();
@@ -20,6 +20,9 @@ AboutWindow::AboutWindow()
 	fCreatorText = new BStringView(RECT_0, "fCreatorText",
 		"Created by Tri-Edge AI <triedgeai@gmail.com>");
 
+	fArtistText = new BStringView(RECT_0, "fArtistText",
+		"The mine icon by Michele Frau (ZuMi)");
+
 	SetLayout(new BGroupLayout(B_HORIZONTAL));
 
 	AddChild(BGroupLayoutBuilder(B_HORIZONTAL, 0)
@@ -29,6 +32,7 @@ AboutWindow::AboutWindow()
 			.AddGlue()
 			.Add(fTitleText)
 			.Add(fCreatorText)
+			.Add(fArtistText)
 			.AddGlue()
 		)
 		.SetInsets(8, 8, 8, 8)

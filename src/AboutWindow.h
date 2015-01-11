@@ -23,6 +23,7 @@ private:
 	MinesweeperIconView*	fIcon;
 	BStringView*			fTitleText;
 	BStringView*			fCreatorText;
+	BStringView*			fArtistText;
 	BButton*				fOKButton;
 };
 
