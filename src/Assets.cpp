@@ -1,5 +1,6 @@
 /*
  * Copyright 2013 Tri-Edge AI <triedgeai@gmail.com>
+ * Copyright 2015 Josef Gajdusek <atx@atx.name>
  * All rights reserved. Distributed under the terms of the MIT license.
  */
 
@@ -76,54 +77,20 @@ _Assets::_LoadImage(const char* name)
 	return image;
 }
 
-// Temporary, only while bottom trick is needed.
-// --------------------
-#include <string>
-#include <string.h>
-#include <iostream>
-#include <stdlib.h>
-#include <errno.h>
-using namespace std;
-// --------------------
-
 BSimpleGameSound*
 _Assets::_LoadSound(const char* name)
 {
-	// TODO: Find a normal way to load sounds from resources.
-	/* size_t size;
-	const void* data = fResources->LoadResource('rSFX', name, &size);
-	gs_audio_format format;
-	
-	format.frame_rate = 44100;
-	format.channel_count = 1;
-	format.format = 0x03;
-	format.byte_order = 0;
-	format.buffer_size = 0;
-	
-	BSimpleGameSound* sound = new BSimpleGameSound(data, size, &format);
-	
-	cout<<sound<<endl;
-	cout<<(sound->InitCheck() == B_OK)<<endl;
-	
-	return sound; */
-
-	// Until then:
-
 	size_t size;
 	const void* data = fResources->LoadResource('rSFX', name, &size);
+	gs_audio_format format;
 
-	string path = name;
-	string tempname = path.substr(path.rfind('/') + 1);
+	format.frame_rate = 44100;
+	format.channel_count = 1;
+	format.format = gs_audio_format::B_GS_S16;
+	format.byte_order = 2;
+	format.buffer_size = 0;
 
-	BFile* soundFile = new BFile(tempname.c_str(), B_WRITE_ONLY | B_CREATE_FILE);
-	soundFile->Write(data, size);
-	delete soundFile;
-
-	BSimpleGameSound* sound = new BSimpleGameSound(tempname.c_str());
-
-	cout<<tempname.c_str()<<endl;
-	cout<<remove(tempname.c_str())<<endl;
-	cout<<strerror(errno)<<endl;
+	BSimpleGameSound* sound = new BSimpleGameSound(data, size / 2, &format);
 
 	return sound;
 }
