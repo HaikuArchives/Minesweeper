@@ -1,5 +1,6 @@
 /*
  * Copyright 2013 Tri-Edge AI <triedgeai@gmail.com>
+ * Copyright 2015 Josef Gajdusek <atx@atx.name>
  * All rights reserved. Distributed under the terms of the MIT license.
  */
 
@@ -36,10 +37,10 @@ MinesweeperWindow::MinesweeperWindow()
 	FaceButton = new ImageButton(BRect(50 - 16, 0, 50 + 16, 32), "fFaceButton",
 		Assets.gfx.face.happy, M(MSG_FACE), B_FOLLOW_H_CENTER);
 
-	MineCounter = new DigitalTimerView(BRect(4, 4, 40, 28), "fMineCounter",
+	MineCounter = new DigitalTimerView(BRect(4, 4, 40, 26), "fMineCounter",
 		B_FOLLOW_LEFT);
 
-	TimeCounter = new DigitalTimerView(BRect(100 - 48, 4, 88, 28),
+	TimeCounter = new DigitalTimerView(BRect(100 - 48, 4, 88, 26),
 		"fTimeCounter", B_FOLLOW_RIGHT);
 
 	fSettings.Load();
