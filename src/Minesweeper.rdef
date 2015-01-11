@@ -1,6 +1,7 @@
 /*
  * Copyright 2013 Tri-Edge AI <triedgeai@gmail.com>
  * All rights reserved. Distributed under the terms of the MIT license.
+ * The mine icon by Michele Frau (ZuMi)
  */
 
 resource app_signature "application/x-vnd.minesweeper" ;

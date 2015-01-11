@@ -1,5 +1,6 @@
 /*
  * Copyright 2013 Tri-Edge AI <triedgeai@gmail.com>
+ * Copyright 2015 Josef Gajdusek <atx@atx.name>
  * All rights reserved. Distributed under the terms of the MIT license.
  */
  
@@ -10,20 +11,25 @@
 
 #include <View.h>
 #include <Box.h>
+#include <Bitmap.h>
+#include <GroupLayout.h>
 
-class DigitalTimerView : public BBox {
+class DigitalTimerView : public BView {
 public:
 							DigitalTimerView(BRect frame, const char* name,
-								uint32 resizingMode);
+								uint32 resizingMode, uint32 ndigits=3);
 							~DigitalTimerView();
 
-	void					Draw(BRect updateRect);
+	void					AttachedToWindow();
 	void					Set(uint32 value);
 
 private:
-	uint32					fDigit1;
-	uint32					fDigit2;
-	uint32					fDigit3;
+	void					_UpdateBitmap();
+
+	uint32					fNDigits;
+	uint32					fValue;
+	BView**					fViews;
+	uint32*					fDigits;
 };
 
 #endif
