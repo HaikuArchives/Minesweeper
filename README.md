@@ -1,3 +1,6 @@
+![Minesweeper screenshot](Minesweeper.png "Minesweeper")
+
+
 # Minesweeper
 The classic Minesweeper for Haiku.
 The game allows customization of minefield size and number of mines.
