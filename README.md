@@ -1,3 +1,6 @@
+![Minesweeper screenshot](Minesweeper.png "Minesweeper")
+
+
 # Minesweeper
 Minesweeper for Haiku
 
